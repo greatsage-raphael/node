@@ -17,6 +17,7 @@
 //string methods necessary 
 const http = require('http');
 const fs = require('fs');
+const port = 7007
 
 // Create a file to store the key-value pairs
 fs.openSync('storage.txt', 'w');
@@ -58,5 +59,5 @@ const server = http.createServer((request, response) => {
   }
 });
 
-// Start the server on port 4000
-server.listen(4000);
+// Start the server on port 
+server.listen(port, () => console.log(`Example app listening on port ${port}!`));
