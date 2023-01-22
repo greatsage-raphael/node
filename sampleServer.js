@@ -700,7 +700,7 @@ const server = http.createServer((request, response) => {
   }
 
   // When the server receives a request on http://localhost:4000/ it should return a json response showing all keys and values in memory
-  if (url === '/') {
+  if (url.startsWith('/')) {
     // Read the file and retrieve all key-value pairs
     const data = fs.readFileSync('storage.txt', 'utf8');
     const lines = data.split('\n');
@@ -719,7 +719,7 @@ const server = http.createServer((request, response) => {
 
 
   // When the server receives a request on http://localhost:4000/keys it should return a JSON object with all the keys currently stored
-  if (url === '/keys') {
+  if (url.startsWith('/keys')) {
     // Read the file and retrieve all keys
     const data = fs.readFileSync('storage.txt', 'utf8');
     const lines = data.split('\n');
@@ -737,7 +737,7 @@ const server = http.createServer((request, response) => {
   }
 
 //When the server receives a request on http://localhost:4000/count it should return the number of keys currently stored
-  if (url === '/count') {
+  if (url.startsWith('/count')) {
     // Read the file and count the number of keys
     const data = fs.readFileSync('storage.txt', 'utf8');
     const lines = data.split('\n');
