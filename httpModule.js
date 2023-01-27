@@ -17,7 +17,7 @@
 //string methods necessary 
 const http = require('http');
 const fs = require('fs');
-const port = 7007
+const port = 3333
 
 // Create a file to store the key-value pairs
 fs.openSync('storage.txt', 'w');
